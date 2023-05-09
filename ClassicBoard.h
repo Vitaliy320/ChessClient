@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CLASSICBOARD_H
 #define CLASSICBOARD_H
 

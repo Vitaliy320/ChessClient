@@ -19,11 +19,28 @@ set(PROJECT_SOURCES
         mainwindow.ui
         Board.h
         Board.cpp
+        Position.h
+        Position.cpp
         Square.h
         Square.cpp
-        Piece.h
         ClassicBoard.h
         ClassicBoard.cpp
+        Piece.h
+        Piece.cpp
+        Pawn.h
+        Pawn.cpp
+        Rook.h
+        Rook.cpp
+        Knight.h
+        Knight.cpp
+        Bishop.h
+        Bishop.cpp
+        Queen.h
+        Queen.cpp
+        King.h
+        King.cpp
+        Utils.h
+        Utils.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

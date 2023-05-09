@@ -1,4 +1,4 @@
-
+#pragma once
 #ifndef BOARD_H
 #define BOARD_H
 
@@ -8,6 +8,10 @@
 #include <vector>
 #include <map>
 #include "Square.h"
+#include <tuple>
+#include <map>
+#include "Position.h"
+
 
 class Board{
 public:
@@ -15,6 +19,7 @@ public:
     virtual void initialiseBoard() = 0;
     std::map<std::string, std::shared_ptr<Square>> getSquares();
     Square getSquareByCoordinates(std::pair<char, char> coordinates);
+    Position fenToPosition();
 
 protected:
     int numberOfColumns;

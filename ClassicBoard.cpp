@@ -11,7 +11,13 @@ ClassicBoard::ClassicBoard(){
     char rows[] = {'1', '2', '3', '4', '5', '6', '7', '8'};
 
     std::string coordinatesString;
+//    "a1", "a2"
 
+//    for (auto coordinates : bishop.getPossibleMoves()){
+//        newCoordinates = std::make_pair<char, char>(square.getCoordinates()[0] + coordinates[0], square.getCoordinates()[1] + coordinates[1])
+//            <'a', '1'>
+//            squares["a1"]
+//        }
     for (char column: columns){
         for (char row: rows){
             coordinatesString = std::string(1, column) + std::string(1, row);

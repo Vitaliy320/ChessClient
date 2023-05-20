@@ -9,16 +9,22 @@
 #include <vector>
 #include <map>
 #include <memory>
+#include <typeindex>
 #include "Square.h"
+
+
 
 class Position {
 public:
     Position();
-    Position(std::string fen, int nOfColumns, int nOfRows, char columns[], char rows[]);
-    void updatePosition(std::string fen);
+    Position(char columns[], int nOfColumns, char rows[], int nOfRows, std::string fen);
+    void positionFromFEN(std::string fen);
     std::string getFEN();
     void setFEN(std::string fen);
-
+    void setSquares(std::map<std::string, std::shared_ptr<Square>> squares);
+    std::map<std::string, std::shared_ptr<Square>> getSquares();
+    std::shared_ptr<Square> getSquareByCoordinates(std::pair<char, char> coordinates);
+    void makeMove(std::pair<char, char> moveFrom, std::pair<char, char> moveTo);
 
 private:
     std::string _fen;
@@ -32,4 +38,6 @@ private:
     int _numberOfRows;
     char* _columns;
     char* _rows;
+    std::map<char, std::pair<std::type_index, char>> _pieces;
+    std::shared_ptr<Piece> _createPiece(char pieceSymbol);
 };

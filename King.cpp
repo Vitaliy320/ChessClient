@@ -3,6 +3,8 @@
 
 King::King(char colour){
     this->colour = colour;
+    this->name = "King";
+    this->symbol = (colour == 'w') ? "K" : "k";
 }
 
 std::vector<std::string> King::calculatePossibleMoves(){

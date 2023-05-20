@@ -17,6 +17,9 @@ public:
     virtual std::vector<std::string> calculatePossibleMoves();
     char colour;
     std::vector<std::string> possibleMoves;
+    std::string getSymbol();
 
 protected:
+    std::string name;
+    std::string symbol;
 };

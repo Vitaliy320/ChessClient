@@ -3,6 +3,8 @@
 
 Bishop::Bishop(char colour){
     this->colour = colour;
+    this->name = "Bishop";
+    this->symbol = (colour == 'w') ? "B" : "b";
 }
 
 std::vector<std::string> Bishop::calculatePossibleMoves(){

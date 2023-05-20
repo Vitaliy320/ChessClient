@@ -16,3 +16,7 @@ void Piece::setPossibleMoves(std::vector<std::string> moves){
 std::vector<std::string> Piece::calculatePossibleMoves(){
     return std::vector<std::string>();
 }
+
+std::string Piece::getSymbol(){
+    return symbol;
+}

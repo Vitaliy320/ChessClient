@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include "Square.h"
+//#include "Square.h"
 #include <tuple>
 #include <map>
 #include "Position.h"
@@ -15,17 +15,25 @@
 
 class Board{
 public:
-    void updateBoard();
-    virtual void initialiseBoard() = 0;
-    std::map<std::string, std::shared_ptr<Square>> getSquares();
-    Square getSquareByCoordinates(std::pair<char, char> coordinates);
-    Position fenToPosition();
+    Board(char* columns, int numberOfColumns, char* rows, int numberOfRows, std::string fen);
+    void updateBoard(std::string fen);
+    virtual void initialiseBoard();
+//    std::map<std::string, std::shared_ptr<Square>> getSquares();
+
+//    Position fenToPosition();
+    void makeMove(std::pair<char, char> moveFrom, std::pair<char, char> moveTo);
+    void createBoardRows(std::map<std::string, std::shared_ptr<Square>> squares);
+    std::vector<std::string> boardToString();
 
 protected:
     int numberOfColumns;
     int numberOfRows;
-    std::map<std::string, std::shared_ptr<Square>> squares;
-    std::string boardFEN;
-private:
 
+    std::string boardFEN;
+    char* columns;
+    char* rows;
+
+private:
+    std::shared_ptr<Position> _position;
+    std::vector<std::vector<std::shared_ptr<Square>>> _boardRows;
 };

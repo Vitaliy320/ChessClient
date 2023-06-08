@@ -1,19 +1,20 @@
 
-//#include "mainwindow.h"
+#include "mainwindow.h"
 
 #include <QApplication>
 #include "Board.h"
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QDebug>
+#include <QGuiApplication>
+#include <QtQuick/QQuickView>
 //#include "ClassicBoard.h"
 
 
 void printBoard(std::vector<std::string> boardString){
-    for (auto row : boardString){
+    for (auto &row : boardString){
         qDebug() << row << Qt::endl;
     }
-
 }
 
 int main(int argc, char *argv[])
@@ -38,25 +39,28 @@ int main(int argc, char *argv[])
     boardString = board.boardToString();
     printBoard(boardString);
 
+//    QGuiApplication app(argc, argv);
+//    QQuickView view;
+//    view.setSource(QUrl::fromLocalFile("D:\\Programming\\C++\\Qt\\Projects\\ChessClient\\Chessboard.qml"));
+//    view.show();
+
+//    QApplication a(argc, argv);
+
+//    QGraphicsScene * scene = new QGraphicsScene();
+//    QGraphicsRectItem * rect = new QGraphicsRectItem();
+
+//    rect->setRect(0, 0, 100, 100);
+//    scene->addItem(rect);
+
+//    QGraphicsView * view = new QGraphicsView(scene);
+
+//    view->show();
+
+
 
 
     QApplication a(argc, argv);
-
-    QGraphicsScene * scene = new QGraphicsScene();
-    QGraphicsRectItem * rect = new QGraphicsRectItem();
-
-    rect->setRect(0, 0, 100, 100);
-    scene->addItem(rect);
-
-    QGraphicsView * view = new QGraphicsView(scene);
-
-    view->show();
-
-
-
-
-
-//    MainWindow w;
-//    w.show();
+    MainWindow w;
+    w.show();
     return a.exec();
 }

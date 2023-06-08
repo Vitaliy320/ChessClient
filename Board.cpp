@@ -86,7 +86,7 @@ std::vector<std::string> Board::boardToString(){
 
     for (int i = 0; i < _boardRows.size(); i++){
         ss.str("");
-        ss << i + 1;
+        ss << 8 - i;
         currentRow += ss.str() + " ";
 
         row = _boardRows[i];

@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Quick)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -23,8 +23,6 @@ set(PROJECT_SOURCES
         Position.cpp
         Square.h
         Square.cpp
-        ClassicBoard.h
-        ClassicBoard.cpp
         Piece.h
         Piece.cpp
         Pawn.h
@@ -41,6 +39,8 @@ set(PROJECT_SOURCES
         King.cpp
         Utils.h
         Utils.cpp
+        Window.h
+        Window.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -66,7 +66,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(ChessClient PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(ChessClient PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Quick)
 
 set_target_properties(ChessClient PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

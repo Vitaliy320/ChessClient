@@ -22,6 +22,7 @@ public:
 
 //    Position fenToPosition();
     void makeMove(std::pair<char, char> moveFrom, std::pair<char, char> moveTo);
+    void makeMoveStr(std::string moveFrom, std::string moveTo);
     void createBoardRows(std::map<std::string, std::shared_ptr<Square>> squares);
     std::vector<std::string> boardToString();
 

@@ -31,7 +31,8 @@ int main(int argc, char *argv[])
     printBoard(boardString);
 
 
-    board.makeMove(std::make_pair('d', '2'), std::make_pair('d', '4'));
+//    board.makeMove(std::make_pair('d', '2'), std::make_pair('d', '4'));
+    board.makeMoveStr("d2", "d4");
     boardString = board.boardToString();
     printBoard(boardString);
 

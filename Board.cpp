@@ -50,6 +50,10 @@ void Board::makeMove(std::pair<char, char> moveFrom, std::pair<char, char> moveT
     _position->makeMove(moveFrom, moveTo);
 }
 
+void Board::makeMoveStr(std::string moveFrom, std::string moveTo){
+    _position->makeMove(std::make_pair(moveFrom[0], moveFrom[1]), std::make_pair(moveTo[0], moveTo[1]));
+}
+
 void Board::createBoardRows(std::map<std::string, std::shared_ptr<Square>> squares){
     std::string coordinatesString;
     std::shared_ptr<Square> square;
